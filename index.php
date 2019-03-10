@@ -1,4 +1,6 @@
 <?php
+    /* Математические Функции
+    
     $x = -15;
     echo abs ($x)."<br/>";
     $y = 49.5141323;
@@ -12,5 +14,15 @@
 
     $z = 1;
 
-    echo round(sin($z),2);
+    echo round(sin($z),2); */
+
+    // Строковые функции
+
+    $string = "Expmple is";
+
+    echo strlen($string)."<br/>";
+    echo strpos($string, "x")."<br/>";
+
+    if (strpos($string, "Е") === false) echo "X is not found";
+    else echo "T is found!";
 ?>
