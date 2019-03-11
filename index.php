@@ -1,28 +1,14 @@
-<?php
-    /* Математические Функции
-    
-    $x = -15;
-    echo abs ($x)."<br/>";
-    $y = 49.5141323;
-    echo round ($y, 3)."<br/>";
-    echo ceil($y)."<br/>";
-    echo floor($y)."<br/>";
+<h2>Simple PHP Contact Form</h2>
+<div class="contactFrm">    
+    <form action="check.php" method="post">
+        <h4>Name</h4>
+        <input type="text" name="name" placeholder="Your Name" required="">
+        <h4>Email </h4>
+        <input type="email" name="email" placeholder="email@example.com" required="">
+        <h4>Message</h4>
+        <textarea name="message" placeholder="Write your message here" required=""> </textarea>
+        <input type="submit" name="submit" value="Submit">
+        <div class="clear"> </div>
+    </form>
+</div>
 
-    echo mt_rand(1, 20)."<br/>";
-    echo min(12, 23, -2, -5, 10, -4, 0)."<br/>";
-    echo max(12, 23, -2, -5, 10, -4, 0)."<br/>";
-
-    $z = 1;
-
-    echo round(sin($z),2); */
-
-    // Строковые функции
-
-    $string = "Expmple is";
-
-    echo strlen($string)."<br/>";
-    echo strpos($string, "x")."<br/>";
-
-    if (strpos($string, "Е") === false) echo "X is not found";
-    else echo "T is found!";
-?>
