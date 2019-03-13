@@ -1,7 +1,6 @@
 <?php
 
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
     $name = $_POST['name'];
     $message = $_POST['message'];
     echo("Email: ");
@@ -14,5 +13,7 @@ if(isset($_POST['submit'])){
     print_r($message);
     echo "<br />";
     print_r($_POST);
+    $to = "jurijs_kolesnikovs@inbox.lv";
+    $from = $_POST['email'];
 }
 ?>

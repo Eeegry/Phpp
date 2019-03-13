@@ -1,14 +1,35 @@
-<h2>Simple PHP Contact Form</h2>
-<div class="contactFrm">    
-    <form action="check.php" method="post">
-        <h4>Name</h4>
-        <input type="text" name="name" placeholder="Your Name" required="">
-        <h4>Email </h4>
-        <input type="email" name="email" placeholder="email@example.com" required="">
-        <h4>Message</h4>
-        <textarea name="message" placeholder="Write your message here" required=""> </textarea>
-        <input type="submit" name="submit" value="Submit">
-        <div class="clear"> </div>
-    </form>
-</div>
+<?php 
+if(isset($_POST['submit'])){
+    $to = "kolesnikov6@inbox.lv";
+    $from = $_POST['email']; 
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
 
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2);
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    }
+?>
+
+<!DOCTYPE html>
+<head>
+<title>Form submission</title>
+</head>
+<body>
+
+<form action="" method="post">
+First Name: <input type="text" name="first_name"><br>
+Last Name: <input type="text" name="last_name"><br>
+Email: <input type="text" name="email"><br>
+Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html> 
