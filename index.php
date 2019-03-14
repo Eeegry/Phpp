@@ -1,35 +1,21 @@
-<?php 
-if(isset($_POST['submit'])){
-    $to = "kolesnikov6@inbox.lv";
-    $from = $_POST['email']; 
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+<?php
+    $string = "This is example!";
 
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2);
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    }
+    echo strlen($string)."<br />";
+    echo strpos($string, "exa")."<br />";
+
+    if (strpos ($string, "T") === false) echo "T is not found";
+    else echo "T is found";
+
+    echo "<br />".substr($string, 3, -2)."<br />";
+    echo str_replace(array($string),"are", $string);
+
+    $str = "<b>XAXA, zhirniy shrift</b>";
+    echo htmlspecialchars($str);
+
+    echo "br />".strtolower($string)."<br />".strtoupper($string)."<br />";
+
+    echo md5("123")."<br />";
+
+    echo trim("  string    sd          gg     ");
 ?>
-
-<!DOCTYPE html>
-<head>
-<title>Form submission</title>
-</head>
-<body>
-
-<form action="" method="post">
-First Name: <input type="text" name="first_name"><br>
-Last Name: <input type="text" name="last_name"><br>
-Email: <input type="text" name="email"><br>
-Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>
-<input type="submit" name="submit" value="Submit">
-</form>
-
-</body>
-</html> 
